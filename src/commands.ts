@@ -109,7 +109,8 @@ export async function generateApp() {
     useAppStore.getState().setGenerating(true);
     try {
       const openai = new OpenAI({
-        apiKey,
+        apiKey: apiKey,
+        baseURL: "https://api.sambanova.ai/v1",
         dangerouslyAllowBrowser: true,
       });
       const stream = await openai.chat.completions.create({
@@ -123,7 +124,7 @@ export async function generateApp() {
             content: [{ type: "image_url", image_url: { url: base64 as any } }],
           },
         ],
-        model: "gpt-4o",
+        model: "Llama-3.2-11B-Vision-Instruct",
         stream: true,
         max_tokens: 3000,
       });
