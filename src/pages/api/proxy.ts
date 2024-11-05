@@ -7,10 +7,10 @@ export const POST: APIRoute = async ({ request }) => {
     const body = await request.json();
 
     // Extract parameters from the request body
-    const { messages, model, max_tokens } = body;
+    const { apiKey, messages, model, max_tokens } = body;
 
     // Get API key from environment variable
-    const apiKey = "044640db-5f92-47c7-88e6-945aa8109597";
+    
 
     if (!apiKey) {
       return new Response(JSON.stringify({ error: 'API key not configured' }), {

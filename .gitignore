@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+src/old/commands copy 2.ts
+src/old/commands copy 3.ts
+src/old/commands copy.ts
+/src/old

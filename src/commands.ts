@@ -175,7 +175,13 @@ export async function test() {
 
 export async function generateApp() {
   const editor = window.editor;
-  const page = editor.getCurrentPage();
+  const apiKey = useAppStore.getState().apiKey;
+
+  if (!apiKey) {
+    toast.error('API key is required');
+    return;
+  }
+  const page = editor.getCurrentPage()!;
   const base64 = await getImageDataUrl(editor.canvas, page, {
     scale: 1,
     dark: false,
@@ -191,6 +197,7 @@ export async function generateApp() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        apiKey: apiKey,
         messages: [
           {
             role: 'system',
