@@ -165,11 +165,7 @@ export async function alignBringToFront() {
 // }
 
 export async function test() {
-  const editor = window.editor;
-  const page = editor.getCurrentPage();
-  const base64 = await getImageDataUrl(editor.canvas, page, {
-   
-})}
+  }
 
 
 
