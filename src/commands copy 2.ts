@@ -107,27 +107,27 @@ export async function alignBringToFront() {
 //     });
 //     useAppStore.getState().setAppCode(null);
 //     useAppStore.getState().setGenerating(true);
-//     try {
-//       const openai = new OpenAI({
-//         apiKey: apiKey,
-//         // baseURL: "https://api.sambanova.ai/v1",
-//         dangerouslyAllowBrowser: true,
-//       });
-//       const stream = await openai.chat.completions.create({
-//         messages: [
-//           {
-//             role: "system",
-//             content: systemPrompt,
-//           },
-//           {
-//             role: "user",
-//             content: [{ type: "image_url", image_url: { url: base64 as any } }],
-//           },
-//         ],
-//         model: "gpt-4o",
-//         stream: true,
-//         max_tokens: 3000,
-//       });
+    // try {
+    //   const openai = new OpenAI({
+    //     apiKey: apiKey,
+    //     baseURL: "https://api.sambanova.ai/v1",
+    //     dangerouslyAllowBrowser: true,
+    //   });
+    //   const stream = await openai.chat.completions.create({
+    //     messages: [
+    //       {
+    //         role: "system",
+    //         content: systemPrompt,
+    //       },
+    //       {
+    //         role: "user",
+    //         content: [{ type: "image_url", image_url: { url: base64 as any } }],
+    //       },
+    //     ],
+    //     model: "Llama-3.2-11B-Vision-Instruct",
+    //     stream: true,
+    //     max_tokens: 3000,
+    //   });
 //       let response = "";
 
 //       // Read the stream
@@ -164,83 +164,158 @@ export async function alignBringToFront() {
 //   }
 // }
 
-export async function test() {
-  const editor = window.editor;
-  const page = editor.getCurrentPage();
-  const base64 = await getImageDataUrl(editor.canvas, page, {
-   
-})}
+// 
 
+// export async function generateApp() {
+//   const editor = window.editor;
+//   const apiKey = useAppStore.getState().apiKey;
+  
+//   if (apiKey) {
+//     const page = editor.getCurrentPage()!;
+//     const base64 = await getImageDataUrl(editor.canvas, page, {
+//       scale: 1,
+//       dark: false,
+//       fillBackground: true,
+//       format: "image/png",
+//     });
+    
+//     useAppStore.getState().setAppCode(null);
+//     useAppStore.getState().setGenerating(true);
 
+//     console.log(base64)
+    
+//     try {
+//       const response = await fetch('/api/nova', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({
+//           apiKey,
+//           messages: [
+//             {
+//               role: "system",
+//               content: systemPrompt,
+//             },
+//             {
+//               role: "user",
+//               content: [{ type: "image_url", image_url: { url: base64 } }],
+//             },
+//           ],
+//         }),
+//       });
+
+//       if (!response.ok) {
+//         const errorData = await response.json().catch(() => ({}));
+//         throw new Error(errorData.error || 'API request failed');
+//       }
+
+//       const data = await response.json();
+//       const content = data.choices[0]?.message?.content || '';
+      
+//       // Extract HTML code from the response
+//       const regex = /```html([\s\S]*?)```/g;
+//       const match = regex.exec(content);
+//       if (match && match.length > 0) {
+//         useAppStore.getState().setAppCode(match[1].trim());
+//         toast.success('App generated successfully');
+//       } else {
+//         useAppStore.getState().setAppCode(null);
+//         toast.error('Failed to generate app');
+//       }
+
+//     } catch (err) {
+//       console.error(err);
+//       useAppStore.getState().setGenerating(false);
+//       toast.error(err instanceof Error ? err.message : 'Failed to generate app');
+//     } finally {
+//       useAppStore.getState().setGenerating(false);
+//     }
+//   }
+// }
 
 export async function generateApp() {
   const editor = window.editor;
-  const page = editor.getCurrentPage();
-  const base64 = await getImageDataUrl(editor.canvas, page, {
-    scale: 1,
-    dark: false,
-    fillBackground: true,
-    format: 'image/png',
-  });
-  useAppStore.getState().setAppCode(null);
-  useAppStore.getState().setGenerating(true);
-  try {
-    const response = await fetch('/api/proxy', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        messages: [
-          {
-            role: 'system',
-            content: [
-              {
-                type: 'text',
-                text: systemPrompt,
-              },
-            ],
-          },
-          {
-            role: 'user',
-            content: [
-              {
-                type: 'image_url',
-                text: base64,
-              },
-            ],
-          },
-        ],
-        model: 'Llama-3.2-90B-Vision-Instruct',
-        max_tokens: 3000,
-      }),
+  const apiKey = useAppStore.getState().apiKey;
+  
+  if (apiKey) {
+    const page = editor.getCurrentPage()!;
+    const base64 = await getImageDataUrl(editor.canvas, page, {
+      scale: 1,
+      dark: false,
+      fillBackground: true,
+      format: "image/png",
     });
+    
+    // Convert data URL to base64 string by removing the prefix
+    const base64Image = base64.split(',')[1];
+    
+    useAppStore.getState().setAppCode(null);
+    useAppStore.getState().setGenerating(true);
+    
+    try {
+      const response = await fetch('/api/nova', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          apiKey,
+          messages: [
+            {
+              role: "system",
+              content: [
+                {
+                  type: "text",
+                  text: systemPrompt
+                }
+              ]
+            },
+            {
+              role: "user",
+              content: [
+                {
+                  type: "text",
+                  text: "Generate HTML code for this wireframe"
+                },
+                {
+                  type: "image_url",
+                  text: `data:image/png;base64,${base64Image}`
+                }
+              ]
+            },
+          ],
+        }),
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(`Error from proxy: ${errorData.error}`);
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'API request failed');
+      }
+
+      const data = await response.json();
+      console.log('API Response:', data); // Debug log
+      
+      const content = data.choices?.[0]?.message?.content || '';
+      
+      // Extract HTML code from the response
+      const regex = /```html([\s\S]*?)```/g;
+      const match = regex.exec(content);
+      if (match && match.length > 0) {
+        useAppStore.getState().setAppCode(match[1].trim());
+        toast.success('App generated successfully');
+      } else {
+        useAppStore.getState().setAppCode(null);
+        toast.error('Failed to generate app');
+      }
+
+    } catch (err) {
+      console.error(err);
+      useAppStore.getState().setGenerating(false);
+      toast.error(err instanceof Error ? err.message : 'Failed to generate app');
+    } finally {
+      useAppStore.getState().setGenerating(false);
     }
-
-    const data = await response.json();
-
-    const responseText = data.choices[0]?.message?.content;
-
-    // Extract HTML code from the response
-    const regex = /```html([\s\S]*?)```/g;
-    const match = regex.exec(responseText);
-    if (match && match.length > 0) {
-      useAppStore.getState().setAppCode(match[1].trim());
-      toast.success('App generated successfully');
-    } else {
-      useAppStore.getState().setAppCode(null);
-      toast.error('Failed to generate app');
-    }
-
-    useAppStore.getState().setGenerating(false);
-  } catch (err) {
-    console.error(err);
-    useAppStore.getState().setGenerating(false);
-    toast.error('Failed to generate app');
   }
 }
 

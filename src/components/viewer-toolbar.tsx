@@ -39,7 +39,7 @@ export function ViewerToolbar({}) {
             setOpen(true);
           }}
         >
-          OpenAI API Key
+          Your API Key
         </div>
         <Button
           size="sm"

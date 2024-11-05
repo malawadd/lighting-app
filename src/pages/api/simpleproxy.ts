@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request }) => {
-    const { userApiKey, messages, model, stream, max_tokens } = await request.json();
+    const { userApiKey } = await request.json();
 
     if (!userApiKey) {
         return new Response(JSON.stringify({ error: "Missing API key" }), { status: 400 });
@@ -15,16 +15,18 @@ export const POST: APIRoute = async ({ request }) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            stream,
-            model,
-            messages,
-          
+            stream: true,
+            model: "Meta-Llama-3.1-8B-Instruct",
+            messages: [
+                { role: "system", content: "You are a helpful assistant" },
+                { role: "user", content: "Hello" }
+            ],
         }),
     });
 
     try {
         const response = await fetch(sambanovaRequest);
-        console.log(response)
+
         if (!response.ok) {
             return new Response(JSON.stringify({ error: "Error from SambaNova API" }), {
                 status: response.status,
@@ -32,19 +34,13 @@ export const POST: APIRoute = async ({ request }) => {
             });
         }
 
-        // Accumulate all chunks from the response body
-        const reader = response.body?.getReader();
-        const decoder = new TextDecoder();
-        let fullResponse = '';
+        // Read the entire response body as text
+        const responseText = await response.text();
+        
+        // Log the response to check the content
+        console.log("SambaNova Response:", responseText);
 
-        while (reader) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            fullResponse += decoder.decode(value, { stream: true });
-        }
-
-        // Ensure the accumulated response is returned as a JSON object
-        return new Response(JSON.stringify({ data: fullResponse }), {
+        return new Response(responseText, {
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',

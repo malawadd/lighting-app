@@ -5,13 +5,10 @@ export function Appbar({}) {
     <div className="w-full h-full flex items-center justify-between px-4">
       <div>
         <div className="text-sm font-semibold tracking-tight leading-3">
-          draw2app
+          lightingapp
         </div>
         <div className="text-xs opacity-60 mt-0.5">
-          Generate app from drawing by AI powered by{" "}
-          <a href="https://dgmjs.dev" target="_blank" className="underline">
-            DGM.js
-          </a>
+          Generate app from drawing by AI 
         </div>
       </div>
       <div>

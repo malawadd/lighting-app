@@ -43,7 +43,7 @@ export function SettingDialog({}) {
         <div className="grid gap-2">
           <div>
             <Label htmlFor="name" className="text-right text-xs">
-              OpenAI API Key
+               API Key
             </Label>
             <div className="flex items-center gap-1.5 mt-1">
               <Input
