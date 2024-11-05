@@ -107,49 +107,53 @@ export async function generateApp() {
     });
     useAppStore.getState().setAppCode(null);
     useAppStore.getState().setGenerating(true);
-    try {
-      const openai = new OpenAI({
-        apiKey: apiKey,
-        baseURL: "https://api.sambanova.ai/v1",
-        dangerouslyAllowBrowser: true,
-      });
-      const stream = await openai.chat.completions.create({
-        messages: [
-          {
-            role: "system",
-            content: systemPrompt,
-          },
-          {
-            role: "user",
-            content: [{ type: "image_url", image_url: { url: base64 as any } }],
-          },
-        ],
-        model: "Llama-3.2-11B-Vision-Instruct",
-        stream: true,
-        max_tokens: 3000,
-      });
-      let response = "";
 
-      // Read the stream
-      for await (const chunk of stream) {
-        const chunkText = chunk.choices[0]?.delta?.content || "";
-        console.log("[chunk]", chunkText);
-        response += chunkText;
-        const finishReason = chunk.choices[0]?.finish_reason;
-        if (finishReason) {
-          useAppStore.getState().setGenerating(false);
-          if (finishReason !== "stop") {
-            toast.error(
-              `Failed to generate app (finish_reaseon=${finishReason})`
-            );
-            return;
-          }
-        }
+    try {
+      // Send the request to the proxy serverless function
+      const response = await fetch('/api/sambanova-proxy', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userApiKey: apiKey, // Pass user-provided API key to the serverless function
+          messages: [
+            {
+              role: "system",
+              content: systemPrompt,
+            },
+            {
+              role: "user",
+              content: [{ type: "image_url", image_url: { url: base64 as any } }],
+            },
+          ],
+          model: "Llama-3.2-11B-Vision-Instruct",
+          stream: true,
+          max_tokens: 3000,
+        }),
+      });
+
+      // Check if the serverless function response is OK
+      if (!response.ok) {
+        toast.error("Failed to call SambaNova API through proxy");
+        useAppStore.getState().setGenerating(false);
+        return;
       }
 
-      // Extract HTML code from the response
+      const streamReader = response.body?.getReader();
+      let responseText = '';
+
+      // Process the response stream
+      while (streamReader) {
+        const { done, value } = await streamReader.read();
+        if (done) break;
+        const chunkText = new TextDecoder().decode(value);
+        responseText += chunkText;
+      }
+
+      // Process response and extract HTML
       const regex = /```html([\s\S]*?)```/g;
-      const match = regex.exec(response);
+      const match = regex.exec(responseText);
       if (match && match.length > 0) {
         useAppStore.getState().setAppCode(match[1].trim());
         toast.success("App generated successfully");
@@ -157,12 +161,15 @@ export async function generateApp() {
         useAppStore.getState().setAppCode(null);
         toast.error("Failed to generate app");
       }
+
     } catch (err) {
-      console.error(err);
+      console.error("Error calling serverless function:", err);
       useAppStore.getState().setGenerating(false);
+      toast.error("An error occurred while generating the app");
     }
   }
 }
+
 
 /**
  * Insert shape by cloning from a shape prototype
