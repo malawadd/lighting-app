@@ -131,8 +131,8 @@ export async function generateApp() {
     //   format: 'image/png', // Ensure it's PNG
     // }); 
 
-    // Use the data URL as is (includes the prefix)
-    const dataUrl = base64; // Should start with 'data:image/png;base64,'
+    
+    const dataUrl = base64; 
 
     // Create the request body matching the Python code
     const requestBody = {
@@ -149,7 +149,7 @@ export async function generateApp() {
             {
               type: 'image_url',
               image_url: {
-                url: dataUrl, // Include the full data URL
+                url: dataUrl, 
               },
             },
             {
@@ -197,7 +197,7 @@ export async function generateApp() {
 
       // Iterate through all matches to find the last HTML block
       while ((match = htmlRegex.exec(responseText)) !== null) {
-          lastHtmlBlock = match[1].trim(); // Update to the latest matched block
+          lastHtmlBlock = match[1].trim(); 
       }
 
       if (lastHtmlBlock) {
