@@ -1,17 +1,17 @@
 {
-  "id": "NCIJKiybSSmDs1YJrb-GF",
+  "id": "-ppcdTN5nIissMY3iQ1WX",
   "type": "Doc",
   "parent": null,
   "children": [
     {
-      "id": "tE1cCFiY4W82JNVHnxN-9",
+      "id": "yJVPVVr5qX_qKiZ7ttTjU",
       "type": "Page",
-      "parent": "NCIJKiybSSmDs1YJrb-GF",
+      "parent": "-ppcdTN5nIissMY3iQ1WX",
       "children": [
         {
-          "id": "S54Mazz2NoD3UOOb8_lLm",
+          "id": "OukFkG9G_wd0CXetw_l7z",
           "type": "Rectangle",
-          "parent": "tE1cCFiY4W82JNVHnxN-9",
+          "parent": "yJVPVVr5qX_qKiZ7ttTjU",
           "children": [],
           "name": "",
           "description": "",
@@ -25,15 +25,15 @@
           "containable": false,
           "containableFilter": "",
           "connectable": true,
-          "left": -180.88888931274414,
-          "top": -189.5556411743164,
-          "width": 212.44448852539062,
-          "height": 368.0000305175781,
+          "left": -92,
+          "top": -127,
+          "width": 208,
+          "height": 341,
           "rotate": 0,
-          "strokeColor": "$cyan9",
+          "strokeColor": "$red9",
           "strokeWidth": 2,
           "strokePattern": [],
-          "fillColor": "$cyan4",
+          "fillColor": "$red4",
           "fillStyle": "solid",
           "fontColor": "$foreground",
           "fontFamily": "Gloria Hallelujah",
@@ -80,6 +80,490 @@
           "vertAlign": "middle",
           "lineHeight": 1.2,
           "paragraphSpacing": 0
+        },
+        {
+          "id": "rvp2j3Kyt507DM4jU8h2d",
+          "type": "Ellipse",
+          "parent": "yJVPVVr5qX_qKiZ7ttTjU",
+          "children": [],
+          "name": "",
+          "description": "",
+          "proto": false,
+          "tags": [],
+          "enable": true,
+          "visible": true,
+          "movable": "free",
+          "sizable": "free",
+          "rotatable": true,
+          "containable": false,
+          "containableFilter": "",
+          "connectable": true,
+          "left": -48,
+          "top": -94,
+          "width": 117,
+          "height": 112,
+          "rotate": 0,
+          "strokeColor": "$yellow9",
+          "strokeWidth": 2,
+          "strokePattern": [],
+          "fillColor": "$yellow4",
+          "fillStyle": "solid",
+          "fontColor": "$foreground",
+          "fontFamily": "Gloria Hallelujah",
+          "fontSize": 16,
+          "fontStyle": "normal",
+          "fontWeight": 400,
+          "opacity": 1,
+          "roughness": 1,
+          "link": "",
+          "constraints": [],
+          "properties": [],
+          "scripts": [],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "anchored": false,
+          "anchorAngle": 0,
+          "anchorLength": 0,
+          "anchorPosition": 0.5,
+          "textEditable": true,
+          "text": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "attrs": {
+                  "textAlign": "center"
+                },
+                "content": []
+              }
+            ]
+          },
+          "wordWrap": false,
+          "horzAlign": "center",
+          "vertAlign": "middle",
+          "lineHeight": 1.2,
+          "paragraphSpacing": 0
+        },
+        {
+          "id": "ahxurTuWJjX9wV6bFdK-O",
+          "type": "Freehand",
+          "parent": "yJVPVVr5qX_qKiZ7ttTjU",
+          "children": [],
+          "name": "",
+          "description": "",
+          "proto": false,
+          "tags": [],
+          "enable": true,
+          "visible": true,
+          "movable": "free",
+          "sizable": "free",
+          "rotatable": true,
+          "containable": false,
+          "containableFilter": "",
+          "connectable": true,
+          "left": -32,
+          "top": 59,
+          "width": 102,
+          "height": 3,
+          "rotate": 0,
+          "strokeColor": "$green9",
+          "strokeWidth": 6,
+          "strokePattern": [],
+          "fillColor": "$green4",
+          "fillStyle": "solid",
+          "fontColor": "$foreground",
+          "fontFamily": "Gloria Hallelujah",
+          "fontSize": 16,
+          "fontStyle": "normal",
+          "fontWeight": 400,
+          "opacity": 1,
+          "roughness": 1,
+          "link": "",
+          "constraints": [],
+          "properties": [],
+          "scripts": [],
+          "pathEditable": false,
+          "path": [
+            [
+              -32,
+              59
+            ],
+            [
+              -31,
+              59
+            ],
+            [
+              -30,
+              59
+            ],
+            [
+              -28,
+              59
+            ],
+            [
+              -18,
+              59
+            ],
+            [
+              -10,
+              59
+            ],
+            [
+              2,
+              61
+            ],
+            [
+              7,
+              61
+            ],
+            [
+              12,
+              61
+            ],
+            [
+              16,
+              61
+            ],
+            [
+              21,
+              61
+            ],
+            [
+              28,
+              62
+            ],
+            [
+              33,
+              62
+            ],
+            [
+              40,
+              61
+            ],
+            [
+              46,
+              61
+            ],
+            [
+              51,
+              59
+            ],
+            [
+              57,
+              59
+            ],
+            [
+              63,
+              59
+            ],
+            [
+              67,
+              59
+            ],
+            [
+              69,
+              59
+            ],
+            [
+              70,
+              59
+            ]
+          ],
+          "thinning": 0.5,
+          "tailTaper": 0,
+          "headTaper": 0
+        },
+        {
+          "id": "sCZvFriHelgAEVwo63aLz",
+          "type": "Freehand",
+          "parent": "yJVPVVr5qX_qKiZ7ttTjU",
+          "children": [],
+          "name": "",
+          "description": "",
+          "proto": false,
+          "tags": [],
+          "enable": true,
+          "visible": true,
+          "movable": "free",
+          "sizable": "free",
+          "rotatable": true,
+          "containable": false,
+          "containableFilter": "",
+          "connectable": true,
+          "left": -27,
+          "top": 90,
+          "width": 89,
+          "height": 9,
+          "rotate": 0,
+          "strokeColor": "$green9",
+          "strokeWidth": 6,
+          "strokePattern": [],
+          "fillColor": "$green4",
+          "fillStyle": "solid",
+          "fontColor": "$foreground",
+          "fontFamily": "Gloria Hallelujah",
+          "fontSize": 16,
+          "fontStyle": "normal",
+          "fontWeight": 400,
+          "opacity": 1,
+          "roughness": 1,
+          "link": "",
+          "constraints": [],
+          "properties": [],
+          "scripts": [],
+          "pathEditable": false,
+          "path": [
+            [
+              -27,
+              99
+            ],
+            [
+              -26,
+              99
+            ],
+            [
+              -5,
+              96
+            ],
+            [
+              7,
+              95
+            ],
+            [
+              17,
+              95
+            ],
+            [
+              28,
+              92
+            ],
+            [
+              33,
+              92
+            ],
+            [
+              35,
+              91
+            ],
+            [
+              36,
+              91
+            ],
+            [
+              37,
+              91
+            ],
+            [
+              38,
+              91
+            ],
+            [
+              39,
+              91
+            ],
+            [
+              41,
+              91
+            ],
+            [
+              42,
+              91
+            ],
+            [
+              43,
+              91
+            ],
+            [
+              45,
+              91
+            ],
+            [
+              46,
+              91
+            ],
+            [
+              47,
+              91
+            ],
+            [
+              48,
+              91
+            ],
+            [
+              49,
+              91
+            ],
+            [
+              50,
+              91
+            ],
+            [
+              53,
+              90
+            ],
+            [
+              55,
+              90
+            ],
+            [
+              57,
+              90
+            ],
+            [
+              58,
+              90
+            ],
+            [
+              59,
+              90
+            ],
+            [
+              60,
+              90
+            ],
+            [
+              61,
+              90
+            ],
+            [
+              62,
+              90
+            ]
+          ],
+          "thinning": 0.5,
+          "tailTaper": 0,
+          "headTaper": 0
+        },
+        {
+          "id": "zszgOEh2zaguDEyuQChDt",
+          "type": "Freehand",
+          "parent": "yJVPVVr5qX_qKiZ7ttTjU",
+          "children": [],
+          "name": "",
+          "description": "",
+          "proto": false,
+          "tags": [],
+          "enable": true,
+          "visible": true,
+          "movable": "free",
+          "sizable": "free",
+          "rotatable": true,
+          "containable": false,
+          "containableFilter": "",
+          "connectable": true,
+          "left": -20,
+          "top": 148,
+          "width": 95,
+          "height": 1,
+          "rotate": 0,
+          "strokeColor": "$green9",
+          "strokeWidth": 6,
+          "strokePattern": [],
+          "fillColor": "$green4",
+          "fillStyle": "solid",
+          "fontColor": "$foreground",
+          "fontFamily": "Gloria Hallelujah",
+          "fontSize": 16,
+          "fontStyle": "normal",
+          "fontWeight": 400,
+          "opacity": 1,
+          "roughness": 1,
+          "link": "",
+          "constraints": [],
+          "properties": [],
+          "scripts": [],
+          "pathEditable": false,
+          "path": [
+            [
+              -20,
+              148
+            ],
+            [
+              -19,
+              148
+            ],
+            [
+              -18,
+              148
+            ],
+            [
+              -17,
+              148
+            ],
+            [
+              -15,
+              148
+            ],
+            [
+              -14,
+              148
+            ],
+            [
+              -10,
+              148
+            ],
+            [
+              -1,
+              148
+            ],
+            [
+              14,
+              148
+            ],
+            [
+              30,
+              149
+            ],
+            [
+              44,
+              149
+            ],
+            [
+              54,
+              149
+            ],
+            [
+              60,
+              149
+            ],
+            [
+              63,
+              149
+            ],
+            [
+              66,
+              149
+            ],
+            [
+              67,
+              149
+            ],
+            [
+              68,
+              149
+            ],
+            [
+              72,
+              149
+            ],
+            [
+              75,
+              148
+            ]
+          ],
+          "thinning": 0.5,
+          "tailTaper": 0,
+          "headTaper": 0
         }
       ],
       "name": "",
