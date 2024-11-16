@@ -51,8 +51,18 @@
               "script": "(do\n  (def! m 6)\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (. canvas :strokeRoundRect (+ l m) (+ t m) (- r m) (- b m) 30 seed)\n  (. canvas :roundRect (- (/ (+ l r) 2) 30) (+ t 18) (+ (/ (+ l r) 2) 30) (+ t 34) 8 seed))"
             }
           ],
-          "padding": [0, 8, 0, 8],
-          "corners": [32, 32, 32, 32],
+          "padding": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "corners": [
+            32,
+            32,
+            32,
+            32
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -63,7 +73,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
+                "attrs": {
+                  "textAlign": "left"
+                },
                 "content": []
               }
             ]
@@ -144,8 +156,18 @@
                   "script": "(do\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! yc (/ (+ t b) 2))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (. canvas :line l b r b seed)\n  (. canvas :ellipse (+ l 10) (- yc 6) (+ l 22) (+ yc 6) seed)\n  (. canvas :ellipse (+ l 30) (- yc 6) (+ l 42) (+ yc 6) seed)\n  (. canvas :ellipse (+ l 50) (- yc 6) (+ l 62) (+ yc 6) seed))"
                 }
               ],
-              "padding": [6, 6, 6, 6],
-              "corners": [0, 0, 0, 0],
+              "padding": [
+                6,
+                6,
+                6,
+                6
+              ],
+              "corners": [
+                0,
+                0,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -156,8 +178,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "center" },
-                    "content": [{ "type": "text", "text": "Title" }]
+                    "attrs": {
+                      "textAlign": "center"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Title"
+                      }
+                    ]
                   }
                 ]
               },
@@ -201,8 +230,18 @@
           "constraints": [],
           "properties": [],
           "scripts": [],
-          "padding": [0, 0, 0, 0],
-          "corners": [12, 12, 12, 12],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            12,
+            12,
+            12,
+            12
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -213,7 +252,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
+                "attrs": {
+                  "textAlign": "left"
+                },
                 "content": []
               }
             ]
@@ -294,8 +335,18 @@
                   "script": "(do\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! b (. shape :bottom))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (. canvas :line l b r b seed))"
                 }
               ],
-              "padding": [6, 6, 6, 6],
-              "corners": [0, 0, 0, 0],
+              "padding": [
+                6,
+                6,
+                6,
+                6
+              ],
+              "corners": [
+                0,
+                0,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -306,8 +357,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "center" },
-                    "content": [{ "type": "text", "text": "Frame" }]
+                    "attrs": {
+                      "textAlign": "center"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Frame"
+                      }
+                    ]
                   }
                 ]
               },
@@ -351,8 +409,18 @@
           "constraints": [],
           "properties": [],
           "scripts": [],
-          "padding": [0, 0, 0, 0],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -363,7 +431,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
+                "attrs": {
+                  "textAlign": "left"
+                },
                 "content": []
               }
             ]
@@ -412,8 +482,18 @@
           "constraints": [],
           "properties": [],
           "scripts": [],
-          "padding": [0, 0, 0, 0],
-          "corners": [8, 8, 8, 8],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            8,
+            8,
+            8,
+            8
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -424,8 +504,15 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "center" },
-                "content": [{ "type": "text", "text": "Button" }]
+                "attrs": {
+                  "textAlign": "center"
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Button"
+                  }
+                ]
               }
             ]
           },
@@ -481,8 +568,18 @@
           ],
           "properties": [],
           "scripts": [],
-          "padding": [0, 0, 0, 0],
-          "corners": [14, 14, 14, 14],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            14,
+            14,
+            14,
+            14
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -493,8 +590,15 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "center" },
-                "content": [{ "type": "text", "text": "Label" }]
+                "attrs": {
+                  "textAlign": "center"
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Label"
+                  }
+                ]
               }
             ]
           },
@@ -542,8 +646,18 @@
           "constraints": [],
           "properties": [],
           "scripts": [],
-          "padding": [0, 8, 0, 8],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -554,8 +668,15 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
-                "content": [{ "type": "text", "text": "Input" }]
+                "attrs": {
+                  "textAlign": "left"
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Input"
+                  }
+                ]
               }
             ]
           },
@@ -603,8 +724,18 @@
           "constraints": [],
           "properties": [],
           "scripts": [],
-          "padding": [0, 8, 0, 8],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -615,7 +746,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
+                "attrs": {
+                  "textAlign": "left"
+                },
                 "content": []
               }
             ]
@@ -669,8 +802,18 @@
               "script": "(do\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (. canvas :line l t r b seed)\n  (. canvas :line r t l b seed))"
             }
           ],
-          "padding": [0, 8, 0, 8],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -681,7 +824,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
+                "attrs": {
+                  "textAlign": "left"
+                },
                 "content": []
               }
             ]
@@ -735,8 +880,18 @@
               "script": "(do\n  (def! m 8)\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (. canvas :line (- r 8) t (- r 8) b seed)\n  (. canvas :setFillColor (. shape :strokeColor) seed)\n  (. canvas :fillRect (- r 8) t r (- b (/ (. shape :height) 2)) seed))"
             }
           ],
-          "padding": [0, 8, 0, 8],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -747,7 +902,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
+                "attrs": {
+                  "textAlign": "left"
+                },
                 "content": []
               }
             ]
@@ -801,8 +958,18 @@
               "script": "(do\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! h (. shape :height))\n  (def! xc (/ (+ l r) 2))\n  (def! yc (/ (+ t b) 2))\n  (def! g (* h 0.2))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (. canvas :ellipse (- xc g) (- yc g) (+ xc g) (+ yc g) seed)\n  (. canvas :polyline\n     [[(- xc (* g 0.3)) (- yc (* g 0.5))]\n      [(+ xc (* g 0.4)) yc]\n      [(- xc (* g 0.3)) (+ yc (* g 0.5))]\n      [(- xc (* g 0.3)) (- yc (* g 0.5))]] seed))"
             }
           ],
-          "padding": [0, 8, 0, 8],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -813,7 +980,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
+                "attrs": {
+                  "textAlign": "left"
+                },
                 "content": []
               }
             ]
@@ -870,8 +1039,18 @@
           ],
           "properties": [],
           "scripts": [],
-          "padding": [0, 0, 0, 0],
-          "corners": [14, 14, 14, 14],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            14,
+            14,
+            14,
+            14
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -882,11 +1061,17 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "center" },
+                "attrs": {
+                  "textAlign": "center"
+                },
                 "content": [
                   {
                     "type": "text",
-                    "marks": [{ "type": "underline" }],
+                    "marks": [
+                      {
+                        "type": "underline"
+                      }
+                    ],
                     "text": "Link"
                   }
                 ]
@@ -957,8 +1142,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [6, 6, 6, 6],
-              "corners": [0, 0, 0, 0],
+              "padding": [
+                6,
+                6,
+                6,
+                6
+              ],
+              "corners": [
+                0,
+                0,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -969,18 +1164,39 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
-                    "content": [{ "type": "text", "text": "option1" }]
+                    "attrs": {
+                      "textAlign": "left"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "option1"
+                      }
+                    ]
                   },
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
-                    "content": [{ "type": "text", "text": "option2" }]
+                    "attrs": {
+                      "textAlign": "left"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "option2"
+                      }
+                    ]
                   },
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
-                    "content": [{ "type": "text", "text": "option3" }]
+                    "attrs": {
+                      "textAlign": "left"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "option3"
+                      }
+                    ]
                   }
                 ]
               },
@@ -1029,15 +1245,31 @@
               "property": "Open"
             }
           ],
-          "properties": [{ "name": "Open", "type": "boolean", "value": true }],
+          "properties": [
+            {
+              "name": "Open",
+              "type": "boolean",
+              "value": true
+            }
+          ],
           "scripts": [
             {
               "id": "render",
               "script": "(do\n  (def! g 8)\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! h (. shape :height))\n  (def! xc (- r (/ h 2)))\n  (def! yc (+ t (* h 0.65)))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (. canvas :line (- r h) t (- r h) b seed)\n  (. canvas :polyline [[(- xc g) (- yc g)] [xc yc] [(+ xc g) (- yc g)]] seed))"
             }
           ],
-          "padding": [0, 8, 0, 8],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            8,
+            0,
+            8
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -1048,8 +1280,15 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
-                "content": [{ "type": "text", "text": "Select" }]
+                "attrs": {
+                  "textAlign": "left"
+                },
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Select"
+                  }
+                ]
               }
             ]
           },
@@ -1095,15 +1334,31 @@
           "roughness": 1,
           "link": "",
           "constraints": [],
-          "properties": [{ "name": "Value", "type": "number", "value": 0 }],
+          "properties": [
+            {
+              "name": "Value",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "scripts": [
             {
               "id": "render",
               "script": "(do\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! h (. shape :height))\n  (def! yc (/ (+ t b) 2))\n  (def! value (/ (. shape :getPropertyValue \"Value\") 100))\n  (def! range (- (- r l) h))\n  (def! p (+ l (* range value)))\n  (def! seed (. shape :getSeed))\n  (. canvas :line l yc r yc seed)\n  (. canvas :ellipse p t (+ p h) b seed))"
             }
           ],
-          "padding": [0, 0, 0, 0],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -1114,7 +1369,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "center" },
+                "attrs": {
+                  "textAlign": "center"
+                },
                 "content": []
               }
             ]
@@ -1175,8 +1432,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [0, 0, 0, 0],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                0,
+                0,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1185,7 +1452,12 @@
               "text": {
                 "type": "doc",
                 "content": [
-                  { "type": "paragraph", "attrs": { "textAlign": "left" } }
+                  {
+                    "type": "paragraph",
+                    "attrs": {
+                      "textAlign": "left"
+                    }
+                  }
                 ]
               },
               "wordWrap": false,
@@ -1239,8 +1511,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [0, 0, 0, 0],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                0,
+                0,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1249,7 +1531,12 @@
               "text": {
                 "type": "doc",
                 "content": [
-                  { "type": "paragraph", "attrs": { "textAlign": "left" } }
+                  {
+                    "type": "paragraph",
+                    "attrs": {
+                      "textAlign": "left"
+                    }
+                  }
                 ]
               },
               "wordWrap": false,
@@ -1305,9 +1592,18 @@
               "scripts": [],
               "pathEditable": true,
               "path": [
-                [-696.1794819012149, 39.77816621227876],
-                [-707.0742187433201, 45.72553463333139],
-                [-711.9689555854254, 57.67290305438402]
+                [
+                  -696.1794819012149,
+                  39.77816621227876
+                ],
+                [
+                  -707.0742187433201,
+                  45.72553463333139
+                ],
+                [
+                  -711.9689555854254,
+                  57.67290305438402
+                ]
               ],
               "lineType": "curve",
               "headEndType": "flat",
@@ -1360,9 +1656,18 @@
               "scripts": [],
               "pathEditable": true,
               "path": [
-                [-680.8636924708507, 39.72553459001142],
-                [-668.7057977340086, 45.8834293268535],
-                [-663.5479029971665, 56.04132406369558]
+                [
+                  -680.8636924708507,
+                  39.72553459001142
+                ],
+                [
+                  -668.7057977340086,
+                  45.8834293268535
+                ],
+                [
+                  -663.5479029971665,
+                  56.04132406369558
+                ]
               ],
               "lineType": "curve",
               "headEndType": "flat",
@@ -1402,8 +1707,18 @@
           "constraints": [],
           "properties": [],
           "scripts": [],
-          "padding": [0, 0, 0, 0],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -1414,7 +1729,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "center" },
+                "attrs": {
+                  "textAlign": "center"
+                },
                 "content": []
               }
             ]
@@ -1438,7 +1755,9 @@
               "name": "Tab",
               "description": "",
               "proto": true,
-              "tags": ["tab"],
+              "tags": [
+                "tab"
+              ],
               "enable": true,
               "visible": true,
               "movable": "free",
@@ -1468,8 +1787,18 @@
               "constraints": [],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [8, 8, 0, 0],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                8,
+                8,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1480,8 +1809,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "center" },
-                    "content": [{ "type": "text", "text": "Tab" }]
+                    "attrs": {
+                      "textAlign": "center"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Tab"
+                      }
+                    ]
                   }
                 ]
               },
@@ -1499,7 +1835,9 @@
               "name": "Tab",
               "description": "",
               "proto": true,
-              "tags": ["tab"],
+              "tags": [
+                "tab"
+              ],
               "enable": true,
               "visible": true,
               "movable": "free",
@@ -1529,8 +1867,18 @@
               "constraints": [],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [8, 8, 0, 0],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                8,
+                8,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1541,8 +1889,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "center" },
-                    "content": [{ "type": "text", "text": "Tab" }]
+                    "attrs": {
+                      "textAlign": "center"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Tab"
+                      }
+                    ]
                   }
                 ]
               },
@@ -1594,8 +1949,18 @@
           ],
           "properties": [],
           "scripts": [],
-          "padding": [0, 0, 0, 0],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -1606,7 +1971,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "center" },
+                "attrs": {
+                  "textAlign": "center"
+                },
                 "content": []
               }
             ]
@@ -1682,8 +2049,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [12, 16, 12, 16],
-              "corners": [0, 0, 0, 0],
+              "padding": [
+                12,
+                16,
+                12,
+                16
+              ],
+              "corners": [
+                0,
+                0,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1694,8 +2071,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
-                    "content": [{ "type": "text", "text": "Dialog" }]
+                    "attrs": {
+                      "textAlign": "left"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Dialog"
+                      }
+                    ]
                   }
                 ]
               },
@@ -1756,8 +2140,18 @@
                   "script": "(do\n  (def! l (. shape :left))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! g (* (. shape :width) 0.1))\n  (def! seed (. shape :getSeed))\n  (. canvas :line (+ l g) (+ t g) (- r g) (- b g) seed)\n  (. canvas :line (- r g) (+ t g) (+ l g) (- b g) seed))"
                 }
               ],
-              "padding": [0, 0, 0, 0],
-              "corners": [0, 0, 0, 0],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                0,
+                0,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1768,7 +2162,9 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
+                    "attrs": {
+                      "textAlign": "left"
+                    },
                     "content": []
                   }
                 ]
@@ -1815,7 +2211,11 @@
               "roughness": 1,
               "link": "",
               "constraints": [
-                { "id": "set-size", "width": "text", "height": "text" },
+                {
+                  "id": "set-size",
+                  "width": "text",
+                  "height": "text"
+                },
                 {
                   "id": "align-to-parent",
                   "horz": "fill",
@@ -1826,8 +2226,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [8, 16, 8, 16],
-              "corners": [0, 0, 0, 0],
+              "padding": [
+                8,
+                16,
+                8,
+                16
+              ],
+              "corners": [
+                0,
+                0,
+                0,
+                0
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1838,7 +2248,9 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
+                    "attrs": {
+                      "textAlign": "left"
+                    },
                     "content": [
                       {
                         "type": "text",
@@ -1900,8 +2312,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [8, 8, 8, 8],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                8,
+                8,
+                8,
+                8
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1912,8 +2334,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "center" },
-                    "content": [{ "type": "text", "text": "OK" }]
+                    "attrs": {
+                      "textAlign": "center"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "OK"
+                      }
+                    ]
                   }
                 ]
               },
@@ -1969,8 +2398,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [8, 8, 8, 8],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                8,
+                8,
+                8,
+                8
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -1981,8 +2420,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "center" },
-                    "content": [{ "type": "text", "text": "Cancel" }]
+                    "attrs": {
+                      "textAlign": "center"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Cancel"
+                      }
+                    ]
                   }
                 ]
               },
@@ -2026,8 +2472,18 @@
           "constraints": [],
           "properties": [],
           "scripts": [],
-          "padding": [0, 0, 0, 0],
-          "corners": [12, 12, 12, 12],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            12,
+            12,
+            12,
+            12
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -2038,7 +2494,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "left" },
+                "attrs": {
+                  "textAlign": "left"
+                },
                 "content": []
               }
             ]
@@ -2086,7 +2544,11 @@
           "link": "",
           "constraints": [],
           "properties": [
-            { "name": "Checked", "type": "boolean", "value": true }
+            {
+              "name": "Checked",
+              "type": "boolean",
+              "value": true
+            }
           ],
           "scripts": [
             {
@@ -2094,8 +2556,18 @@
               "script": "(do\n  (def! checked (. shape :getPropertyValue \"Checked\"))\n  (def! h (. shape :height))\n  (def! l (if checked (- (. shape :right) h) (. shape :left)))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! m 2)\n  (def! seed (. shape :getSeed))\n  (if checked (. canvas :setFillColor (. shape :strokeColor)))\n  (. shape :renderDefault canvas)\n  (. canvas :setFillColor (. shape :fillColor))\n  (. canvas :ellipse (+ l m) (+ t m) (+ l (- h m)) (- b m) seed))"
             }
           ],
-          "padding": [0, 0, 0, 0],
-          "corners": [14, 14, 14, 14],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            14,
+            14,
+            14,
+            14
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -2106,7 +2578,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "center" },
+                "attrs": {
+                  "textAlign": "center"
+                },
                 "content": []
               }
             ]
@@ -2154,7 +2628,11 @@
           "link": "",
           "constraints": [],
           "properties": [
-            { "name": "Checked", "type": "boolean", "value": false }
+            {
+              "name": "Checked",
+              "type": "boolean",
+              "value": false
+            }
           ],
           "scripts": [
             {
@@ -2162,8 +2640,18 @@
               "script": "(do\n  (def! checked (. shape :getPropertyValue \"Checked\"))\n  (def! h (. shape :height))\n  (def! l (if checked (- (. shape :right) h) (. shape :left)))\n  (def! r (. shape :right))\n  (def! t (. shape :top))\n  (def! b (. shape :bottom))\n  (def! m 2)\n  (def! seed (. shape :getSeed))\n  (if checked (. canvas :setFillColor (. shape :strokeColor)))\n  (. shape :renderDefault canvas)\n  (. canvas :setFillColor (. shape :fillColor))\n  (. canvas :ellipse (+ l m) (+ t m) (+ l (- h m)) (- b m) seed))"
             }
           ],
-          "padding": [0, 0, 0, 0],
-          "corners": [14, 14, 14, 14],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            14,
+            14,
+            14,
+            14
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -2174,7 +2662,9 @@
             "content": [
               {
                 "type": "paragraph",
-                "attrs": { "textAlign": "center" },
+                "attrs": {
+                  "textAlign": "center"
+                },
                 "content": []
               }
             ]
@@ -2243,8 +2733,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [14, 14, 14, 14],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                14,
+                14,
+                14,
+                14
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -2255,8 +2755,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
-                    "content": [{ "type": "text", "text": "Radio" }]
+                    "attrs": {
+                      "textAlign": "left"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Radio"
+                      }
+                    ]
                   }
                 ]
               },
@@ -2299,7 +2806,11 @@
           "link": "",
           "constraints": [],
           "properties": [
-            { "name": "Checked", "type": "boolean", "value": true }
+            {
+              "name": "Checked",
+              "type": "boolean",
+              "value": true
+            }
           ],
           "scripts": [
             {
@@ -2307,8 +2818,18 @@
               "script": "(do\n  (def! m 6)\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (if (. shape :getPropertyValue \"Checked\")\n    (do\n      (. canvas :setFillColor (. shape :strokeColor))\n      (. canvas :ellipse\n         (+ (. shape :left) m)\n         (+ (. shape :top) m)\n         (- (. shape :right) m)\n         (- (. shape :bottom) m) seed))))\n"
             }
           ],
-          "padding": [0, 0, 0, 0],
-          "corners": [14, 14, 14, 14],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            14,
+            14,
+            14,
+            14
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -2317,7 +2838,12 @@
           "text": {
             "type": "doc",
             "content": [
-              { "type": "paragraph", "attrs": { "textAlign": "left" } }
+              {
+                "type": "paragraph",
+                "attrs": {
+                  "textAlign": "left"
+                }
+              }
             ]
           },
           "wordWrap": false,
@@ -2384,8 +2910,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [14, 14, 14, 14],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                14,
+                14,
+                14,
+                14
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -2396,8 +2932,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
-                    "content": [{ "type": "text", "text": "Radio" }]
+                    "attrs": {
+                      "textAlign": "left"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Radio"
+                      }
+                    ]
                   }
                 ]
               },
@@ -2440,7 +2983,11 @@
           "link": "",
           "constraints": [],
           "properties": [
-            { "name": "Checked", "type": "boolean", "value": false }
+            {
+              "name": "Checked",
+              "type": "boolean",
+              "value": false
+            }
           ],
           "scripts": [
             {
@@ -2448,8 +2995,18 @@
               "script": "(do\n  (def! m 6)\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (if (. shape :getPropertyValue \"Checked\")\n    (do\n      (. canvas :setFillColor (. shape :strokeColor))\n      (. canvas :ellipse\n         (+ (. shape :left) m)\n         (+ (. shape :top) m)\n         (- (. shape :right) m)\n         (- (. shape :bottom) m) seed))))\n"
             }
           ],
-          "padding": [0, 0, 0, 0],
-          "corners": [14, 14, 14, 14],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            14,
+            14,
+            14,
+            14
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -2458,7 +3015,12 @@
           "text": {
             "type": "doc",
             "content": [
-              { "type": "paragraph", "attrs": { "textAlign": "left" } }
+              {
+                "type": "paragraph",
+                "attrs": {
+                  "textAlign": "left"
+                }
+              }
             ]
           },
           "wordWrap": false,
@@ -2525,8 +3087,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [14, 14, 14, 14],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                14,
+                14,
+                14,
+                14
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -2537,8 +3109,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
-                    "content": [{ "type": "text", "text": "Checkbox" }]
+                    "attrs": {
+                      "textAlign": "left"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Checkbox"
+                      }
+                    ]
                   }
                 ]
               },
@@ -2581,7 +3160,11 @@
           "link": "",
           "constraints": [],
           "properties": [
-            { "name": "Checked", "type": "boolean", "value": true }
+            {
+              "name": "Checked",
+              "type": "boolean",
+              "value": true
+            }
           ],
           "scripts": [
             {
@@ -2589,8 +3172,18 @@
               "script": "(do\n  (def! l (+ (. shape :left) 4))\n  (def! r (- (. shape :right) 4))\n  (def! t (+ (. shape :top) 4))\n  (def! b (- (. shape :bottom) 4))\n  (def! xc (/ (+ l r) 2))\n  (def! yc (/ (+ t b) 2))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (if (. shape :getPropertyValue \"Checked\")\n    (. canvas :polyline [[l yc] [xc b] [r t]] seed)))"
             }
           ],
-          "padding": [0, 0, 0, 0],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -2599,7 +3192,12 @@
           "text": {
             "type": "doc",
             "content": [
-              { "type": "paragraph", "attrs": { "textAlign": "left" } }
+              {
+                "type": "paragraph",
+                "attrs": {
+                  "textAlign": "left"
+                }
+              }
             ]
           },
           "wordWrap": false,
@@ -2666,8 +3264,18 @@
               ],
               "properties": [],
               "scripts": [],
-              "padding": [0, 0, 0, 0],
-              "corners": [14, 14, 14, 14],
+              "padding": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "corners": [
+                14,
+                14,
+                14,
+                14
+              ],
               "anchored": false,
               "anchorAngle": 0,
               "anchorLength": 0,
@@ -2678,8 +3286,15 @@
                 "content": [
                   {
                     "type": "paragraph",
-                    "attrs": { "textAlign": "left" },
-                    "content": [{ "type": "text", "text": "Checkbox" }]
+                    "attrs": {
+                      "textAlign": "left"
+                    },
+                    "content": [
+                      {
+                        "type": "text",
+                        "text": "Checkbox"
+                      }
+                    ]
                   }
                 ]
               },
@@ -2722,7 +3337,11 @@
           "link": "",
           "constraints": [],
           "properties": [
-            { "name": "Checked", "type": "boolean", "value": false }
+            {
+              "name": "Checked",
+              "type": "boolean",
+              "value": false
+            }
           ],
           "scripts": [
             {
@@ -2730,8 +3349,18 @@
               "script": "(do\n  (def! l (+ (. shape :left) 4))\n  (def! r (- (. shape :right) 4))\n  (def! t (+ (. shape :top) 4))\n  (def! b (- (. shape :bottom) 4))\n  (def! xc (/ (+ l r) 2))\n  (def! yc (/ (+ t b) 2))\n  (def! seed (. shape :getSeed))\n  (. shape :renderDefault canvas)\n  (if (. shape :getPropertyValue \"Checked\")\n    (. canvas :polyline [[l yc] [xc b] [r t]] seed)))"
             }
           ],
-          "padding": [0, 0, 0, 0],
-          "corners": [0, 0, 0, 0],
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ],
           "anchored": false,
           "anchorAngle": 0,
           "anchorLength": 0,
@@ -2740,7 +3369,12 @@
           "text": {
             "type": "doc",
             "content": [
-              { "type": "paragraph", "attrs": { "textAlign": "left" } }
+              {
+                "type": "paragraph",
+                "attrs": {
+                  "textAlign": "left"
+                }
+              }
             ]
           },
           "wordWrap": false,
