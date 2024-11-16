@@ -5,15 +5,15 @@ export function Appbar({}) {
     <div className="w-full h-full flex items-center justify-between px-4">
       <div>
         <div className="text-sm font-semibold tracking-tight leading-3">
-          lightingapp
+          lighting - app
         </div>
         <div className="text-xs opacity-60 mt-0.5">
-          Generate app from drawing by AI 
+          Generate app from a sketch powered by Samanova cloud AI
         </div>
       </div>
       <div>
         <a
-          href="https://github.com/niklauslee/draw2app"
+          href="https://github.com/malawadd/lighting-app"
           target="_blank"
           className={buttonVariants({ variant: "ghost", size: "icon" })}
           title="GitHub"

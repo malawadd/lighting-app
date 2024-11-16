@@ -169,6 +169,93 @@ export async function test() {
 
 
 
+// export async function generateApp() {
+//   const editor = window.editor;
+//   const apiKey = useAppStore.getState().apiKey;
+
+//   if (!apiKey) {
+//     toast.error('API key is required');
+//     return;
+//   }
+//   const page = editor.getCurrentPage()!;
+//   const base64 = await getImageDataUrl(editor.canvas, page, {
+//     scale: 1,
+//     dark: false,
+//     fillBackground: true,
+//     format: 'image/png',
+//   });
+
+//   console.log('Data URL Prefix:', base64.slice(0, 30));
+
+//   useAppStore.getState().setAppCode(null);
+//   useAppStore.getState().setGenerating(true);
+//   try {
+//     const response = await fetch('/api/proxy', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({
+//         apiKey: apiKey,
+//         messages: [
+          // {
+          //   role: 'system',
+          //   content: [
+          //     {
+          //       type: 'text',
+          //       text: systemPrompt,
+          //     },
+          //   ],
+          // },
+//           {
+//             role: 'user',
+//             content: [
+//               {
+//                 type: 'text',
+//                 text: "turn whats in the image into a website",
+//               },
+//               {
+//                 type: 'image_url',
+//                 image_url: {
+//                   url: base64,
+//                 },
+//               },
+//             ],
+//           },
+//         ],
+//         model: 'Llama-3.2-90B-Vision-Instruct',
+//         max_tokens: 3000,
+//       }),
+//     });
+
+//     if (!response.ok) {
+//       const errorData = await response.json();
+//       throw new Error(`Error from proxy: ${errorData.error}`);
+//     }
+
+//     const data = await response.json();
+
+//     const responseText = data.choices[0]?.message?.content;
+
+//     // Extract HTML code from the response
+    // const regex = /```html([\s\S]*?)```/g;
+    // const match = regex.exec(responseText);
+    // if (match && match.length > 0) {
+    //   useAppStore.getState().setAppCode(match[1].trim());
+    //   toast.success('App generated successfully');
+    // } else {
+    //   useAppStore.getState().setAppCode(null);
+    //   toast.error('Failed to generate app');
+    // }
+
+//     useAppStore.getState().setGenerating(false);
+//   } catch (err) {
+//     console.error(err);
+//     useAppStore.getState().setGenerating(false);
+//     toast.error('Failed to generate app');
+//   }
+// }
+
 export async function generateApp() {
   const editor = window.editor;
   const apiKey = useAppStore.getState().apiKey;
@@ -177,46 +264,60 @@ export async function generateApp() {
     toast.error('API key is required');
     return;
   }
+
   const page = editor.getCurrentPage()!;
-  const base64 = await getImageDataUrl(editor.canvas, page, {
-    scale: 1,
-    dark: false,
-    fillBackground: true,
-    format: 'image/png',
-  });
+
+  if (!page) {
+    toast.error('No page is currently open.');
+    useAppStore.getState().setGenerating(false);
+    return;
+  }
+
   useAppStore.getState().setAppCode(null);
   useAppStore.getState().setGenerating(true);
+
   try {
+    // Generate the image data URL in PNG format
+    const base64 = await getImageDataUrl(editor.canvas, page, {
+      scale: 1,
+      dark: false,
+      fillBackground: true,
+      format: 'image/png', // Ensure it's PNG
+    });
+
+    // Use the data URL as is (includes the prefix)
+    const dataUrl = base64; // Should start with 'data:image/png;base64,'
+
+    // Create the request body matching the Python code
+    const requestBody = {
+      apiKey: apiKey,
+      model: 'Llama-3.2-90B-Vision-Instruct',
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'text',
+              text: systemPrompt,
+            },
+            {
+              type: 'image_url',
+              image_url: {
+                url: dataUrl, // Include the full data URL
+              },
+            },
+          ],
+        },
+      ],
+    };
+
+    // Send the request to your serverless proxy
     const response = await fetch('/api/proxy', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        apiKey: apiKey,
-        messages: [
-          {
-            role: 'system',
-            content: [
-              {
-                type: 'text',
-                text: systemPrompt,
-              },
-            ],
-          },
-          {
-            role: 'user',
-            content: [
-              {
-                type: 'image_url',
-                text: base64,
-              },
-            ],
-          },
-        ],
-        model: 'Llama-3.2-90B-Vision-Instruct',
-        max_tokens: 3000,
-      }),
+      body: JSON.stringify(requestBody),
     });
 
     if (!response.ok) {
@@ -228,7 +329,11 @@ export async function generateApp() {
 
     const responseText = data.choices[0]?.message?.content;
 
-    // Extract HTML code from the response
+    // Handle the response as needed
+    console.log('Response:', responseText);
+
+    // If you need to extract HTML code, adjust accordingly
+    // For example:
     const regex = /```html([\s\S]*?)```/g;
     const match = regex.exec(responseText);
     if (match && match.length > 0) {
@@ -241,7 +346,7 @@ export async function generateApp() {
 
     useAppStore.getState().setGenerating(false);
   } catch (err) {
-    console.error(err);
+    console.error('Error:', err);
     useAppStore.getState().setGenerating(false);
     toast.error('Failed to generate app');
   }

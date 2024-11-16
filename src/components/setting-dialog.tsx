@@ -72,9 +72,7 @@ export function SettingDialog({}) {
             </div>
             <div className="text-xs text-muted-foreground my-2">
               <p>
-                Enter your OpenAI API key to enable the AI features. The API key
-                is stored locally in your browser and is not sent to the server.
-                Nevertheless, please be careful not to leak your API key and
+                Enter your sambanova Cloud API key to enable the AI features, please be careful not to leak your API key and
                 delete it when you are not using it.
               </p>
               <ul className="my-2">
@@ -85,11 +83,11 @@ export function SettingDialog({}) {
                     className="mr-1"
                   />
                   <a
-                    href="https://platform.openai.com/api-keys"
+                    href="https://cloud.sambanova.ai/apis"
                     target="_blank"
                     className="underline"
                   >
-                    OpenAI platform API keys
+                    sambanova Cloud platform API keys
                   </a>
                 </li>
               </ul>
