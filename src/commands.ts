@@ -5,7 +5,7 @@ import {
 import { confirm } from "./components/confirm-dialog";
 import { useAppStore } from "./store";
 import OpenAI from "openai";
-import { getImageDataUrl } from "@dgmjs/export";
+import { getImageDataUrl, exportImageAsFile } from "@dgmjs/export";
 import { toast } from "sonner";
 import systemPrompt from "./assets/prompt.md?raw";
 import { geometry, macro, type Shape } from "@dgmjs/core";
@@ -284,6 +284,14 @@ export async function generateApp() {
       fillBackground: true,
       format: 'image/png', // Ensure it's PNG
     });
+    const fileName = "exported_image.png";
+
+    // await exportImageAsFile(editor.canvas, page,fileName, {
+    //   scale: 1,
+    //   dark: false,
+    //   fillBackground: true,
+    //   format: 'image/png', // Ensure it's PNG
+    // }); 
 
     // Use the data URL as is (includes the prefix)
     const dataUrl = base64; // Should start with 'data:image/png;base64,'
@@ -298,13 +306,22 @@ export async function generateApp() {
           content: [
             {
               type: 'text',
-              text: systemPrompt,
+              text: 'what do you see here is an image',
             },
             {
               type: 'image_url',
               image_url: {
                 url: dataUrl, // Include the full data URL
               },
+            },
+            {
+              type: 'text',
+              text: ' Act as an expert web developer specializing in converting low-fidelity wireframes into high-fidelity, interactive, and responsive prototypes. Your task is to analyze the provided design and generate a comprehensive HTML file that adheres to the following guidelines:\n\n- **Styling:** Utilize Tailwind CSSby including the following script tag within the `<head>` section of your HTML document:\n  ```html\n  <script src="https://cdn.tailwindcss.com"></script>\n  ```\n- **JavaScript:** Include any JavaScript within a `<script>` tag with `type="module"`.\n- **Dependencies:** Import necessary JavaScript dependencies using unpkg or skypack.\n- **Fonts:** Source open-source fonts from Google Fonts as required.\n- **Images:** For image content, use Unsplash or solid-colored rectangles as placeholders.\n- **Icons:** Create custom SVGs for any icons needed.\n\n**Design Elements:** The provided design may include various elements such as flow charts, diagrams, labels, arrows, sticky notes, screenshots of other applications, or previous designs. Treat these components as references for your prototype. Structural elements like boxes representing buttons or content may also contain annotations or figures describing interactions, behavior, or appearance. Use your expertise to distinguish annotations (commonly in red) from design elements and exclude annotations from the final prototype.\n\n**Assumptions:** If certain features are not specified, apply your knowledge of user experience and design patterns to fill in the gaps. It is preferable to make informed assumptions rather than leaving components incomplete. Your goal is to ensure the prototype is as complete, advanced, and polished as possible.\n\n**Evaluation Criteria:** Your prototype will be assessed based on:\n1. Resemblance to the provided designs.\n2. Interactivity and responsiveness.\n3. Overall completeness and impressiveness.',
+
+            },
+            {
+              type: 'text',
+              text: 'Please review the attached low-fidelity wireframe and develop a high-fidelity prototype following the instructions above.',
             },
           ],
         },
@@ -338,10 +355,21 @@ export async function generateApp() {
     const match = regex.exec(responseText);
     if (match && match.length > 0) {
       useAppStore.getState().setAppCode(match[1].trim());
-      toast.success('App generated successfully');
+      toast.success('App generated successfully', {
+        action: {
+          label: 'success',
+          onClick: () => toast.dismiss()
+        },
+      })
+
     } else {
       useAppStore.getState().setAppCode(null);
-      toast.error('Failed to generate app');
+      toast.error('Failed to generate app', {
+        action: {
+          label: 'error',
+          onClick: () => toast.dismiss()
+        },
+      });
     }
 
     useAppStore.getState().setGenerating(false);
